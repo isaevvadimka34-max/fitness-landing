@@ -26,3 +26,7 @@ yarn-error.log*
 *.zip
 *.rar
 *.7z
+
+# Source image files
+assets/img/photos/originals/
+assets/img/proof/originals/
