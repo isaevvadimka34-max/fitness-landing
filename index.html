@@ -12,20 +12,36 @@
     <nav aria-label="Основная навигация">
       <a href="#hero">Главная</a>
       <a href="#audience">Кому подходит</a>
-      <a href="#program">Программа</a>
+      <a href="#program">Что внутри</a>
       <a href="#results">Результаты</a>
       <a href="#reviews">Отзывы</a>
       <a href="#tariffs">Тарифы</a>
-      <a href="#faq">FAQ</a>
       <a href="#cta">Записаться</a>
+      <a href="#faq">Вопросы</a>
     </nav>
   </header>
 
   <main>
-    <section id="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Фитнес-курс</h1>
-      <p>Базовый каркас первого экрана будущего лендинга.</p>
-      <a href="#tariffs">Выбрать тариф</a>
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <img
+        class="hero__photo"
+        src="assets/img/photos/web/mat-side-lying-wide-floor.jpg"
+        alt="Девушка лежит на боку на розовом коврике в светлой студии"
+      >
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__brand">
+        <h1 id="hero-title">
+          <span>Gym</span>
+          <span>Girls</span>
+          <span>Club</span>
+        </h1>
+      </div>
+
+      <div class="hero__bottom">
+        <p class="hero__edition">Angel Edition</p>
+        <a class="hero__button" href="#tariffs">Выбрать тариф</a>
+      </div>
     </section>
 
     <section id="audience" aria-labelledby="audience-title">
@@ -34,7 +50,7 @@
     </section>
 
     <section id="program" aria-labelledby="program-title">
-      <h2 id="program-title">Программа курса</h2>
+      <h2 id="program-title">Что внутри курса</h2>
       <p>Здесь позже появится структура модулей и занятий.</p>
     </section>
 
@@ -80,15 +96,15 @@
       </article>
     </section>
 
-    <section id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">FAQ</h2>
-      <p>Здесь позже будут ответы на частые вопросы.</p>
-    </section>
-
     <section id="cta" aria-labelledby="cta-title">
       <h2 id="cta-title">Готовы начать?</h2>
       <p>Финальный призыв к выбору тарифа будет добавлен позже.</p>
       <a href="#tariffs">Перейти к тарифам</a>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Вопросы</h2>
+      <p>Здесь позже будут ответы на частые вопросы.</p>
     </section>
   </main>
 
