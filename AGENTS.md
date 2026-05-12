@@ -12,8 +12,7 @@
 - `assets/css/style.css` — base CSS only.
 - `assets/js/main.js` — safe vanilla JavaScript entry point.
 - `assets/img/hero/` — future hero images.
-- `assets/img/results/` — future result images.
-- `assets/img/reviews/` — future review images.
+- `assets/img/proof/` — future before / after proof images.
 - `assets/img/tariffs/` — future tariff images.
 - `assets/img/icons/` — future icons.
 - `assets/docs/` — future legal documents and public files.
