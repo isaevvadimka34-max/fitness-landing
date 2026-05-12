@@ -11,6 +11,7 @@ Photos in `assets/img/photos/originals/` are source brand photos for the future 
 - `body-closeup-pink-set.jpg` — close-up fitness body frame in a pink set. Web: `assets/img/photos/web/body-closeup-pink-set.webp`. Alt: `Крупный кадр спортивной формы и силуэта`. Best for: shape/result block, gallery, decorative detail.
 - `mirror-portrait-brown-top.jpg` — vertical mirror portrait in brown top and pink set. Web: `assets/img/photos/web/mirror-portrait-brown-top.webp`. Alt: `Портрет девушки в спортивной форме у зеркала`. Best for: hero, gallery, final CTA.
 - `hero-mirror-portrait-brown-top.jpg` — front-facing mirror portrait with strong hero presence. Web: `assets/img/photos/web/hero-mirror-portrait-brown-top.webp`. Alt: `Портрет автора курса в спортивной форме у зеркала`. Best for: hero, final CTA, gallery.
+- `author-studio-pink-set.jpg` — studio portrait of the course author in a soft pink fitness set, seated side pose. Web: `assets/img/photos/web/author-studio-pink-set.webp`. Alt: `Автор курса в розовом спортивном комплекте в светлой студии`. Best for: author/personal brand block, trust section, final CTA, decorative detail.
 
 ## Proof photos / Results and reviews
 
