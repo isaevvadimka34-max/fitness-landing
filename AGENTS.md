@@ -6,6 +6,12 @@
 - Use only HTML, CSS, and vanilla JavaScript.
 - Do not add React, Next.js, backend code, databases, authorization, build tools, package managers, or bundlers.
 
+## Project Location
+
+- Canonical working folder: `C:\Users\дэ\Desktop\My Projects\fitness-landing`.
+- Use this folder for all future edits, local servers, git status checks, commits, and hand-offs.
+- Do not work from or commit in the old folder `C:\Users\дэ\Desktop\fitness-landing`.
+
 ## Project Structure
 
 - `index.html` — main landing page.
