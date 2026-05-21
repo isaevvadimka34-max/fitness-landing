@@ -578,45 +578,38 @@ main > section:not(.hero) h2 {
   position: relative;
   display: grid;
   gap: 20px;
+  align-self: start;
   align-content: stretch;
   overflow: hidden;
   padding: 28px;
   border-radius: 30px;
+  background:
+    linear-gradient(145deg, rgba(255, 248, 243, 0.9), rgba(242, 213, 200, 0.58)),
+    rgba(255, 248, 243, 0.68);
 }
 
-.program__roadmap-line {
-  position: absolute;
-  top: 54px;
-  bottom: 54px;
-  left: 43px;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(201, 123, 148, 0), rgba(201, 123, 148, 0.62), rgba(62, 39, 35, 0.22));
-  transform-origin: top;
-  animation: roadmapLine 900ms ease both;
-}
-
-.program__step {
+.program__roadmap-head {
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 14px;
+  z-index: 2;
+  padding-bottom: 2px;
+  text-align: center;
 }
 
-.program__step > span {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(62, 39, 35, 0.14);
-  border-radius: 50%;
-  background: var(--espresso);
-  color: var(--cream);
-  font-size: 11px;
-  font-weight: 700;
+.program__roadmap-head h3 {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 14px 12px;
+  border: 1px solid rgba(62, 39, 35, 0.16);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 248, 243, 0.96), rgba(242, 213, 200, 0.82));
+  box-shadow: 0 16px 34px rgba(62, 39, 35, 0.13);
+  color: var(--espresso);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 1.04;
 }
 
-.program__step h3,
 .program__panel h3 {
   margin: 0;
   color: var(--espresso);
@@ -624,11 +617,6 @@ main > section:not(.hero) h2 {
   line-height: 1;
 }
 
-.program__step h3 {
-  font-size: 24px;
-}
-
-.program__step p,
 .program__panel p,
 .program__cta-note {
   margin: 0;
@@ -636,9 +624,97 @@ main > section:not(.hero) h2 {
   line-height: 1.45;
 }
 
-.program__step p {
-  margin-top: 7px;
-  font-size: 14px;
+.program__system-map {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(62, 39, 35, 0.12);
+  border-radius: 22px;
+  background: rgba(62, 39, 35, 0.1);
+  box-shadow: 0 20px 45px rgba(62, 39, 35, 0.09);
+}
+
+.program__system-core,
+.program__system-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  text-align: center;
+}
+
+.program__system-core {
+  grid-column: 1 / -1;
+  order: 2;
+  min-height: 132px;
+  padding: 24px 20px;
+  background:
+    linear-gradient(135deg, rgba(62, 39, 35, 0.98), rgba(82, 48, 43, 0.94)),
+    var(--espresso);
+  color: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  line-height: 1.06;
+}
+
+.program__system-node {
+  position: relative;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 74px;
+  padding: 15px 12px;
+  background: rgba(255, 250, 246, 0.76);
+  color: var(--espresso);
+}
+
+.program__system-node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 22px;
+  left: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(201, 123, 148, 0), rgba(62, 39, 35, 0.42), rgba(201, 123, 148, 0));
+}
+
+.program__system-index {
+  color: rgba(62, 39, 35, 0.44);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.program__system-title {
+  color: rgba(62, 39, 35, 0.86);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.program__system-node--training {
+  order: 1;
+}
+
+.program__system-node--tech {
+  order: 1;
+}
+
+.program__system-node--progress {
+  order: 3;
+}
+
+.program__system-node--support {
+  order: 3;
+}
+
+.program__system-node--community {
+  grid-column: 1 / -1;
+  order: 4;
+  min-height: 70px;
 }
 
 .program__bento {
@@ -731,46 +807,6 @@ main > section:not(.hero) h2 {
   pointer-events: none;
 }
 
-.program__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  width: 62px;
-  height: 62px;
-  border: 1px solid rgba(255, 248, 243, 0.32);
-  border-radius: 50%;
-  background: rgba(62, 39, 35, 0.58);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.26);
-  transform: translate(-50%, -50%);
-}
-
-.program__play::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 25px;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  border-left: 16px solid var(--cream);
-}
-
-.program__duration {
-  position: absolute;
-  z-index: 2;
-}
-
-.program__duration {
-  top: 16px;
-  left: 16px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(24, 19, 18, 0.72);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
 
 
 .program__sheet {
@@ -851,33 +887,15 @@ main > section:not(.hero) h2 {
   color: var(--cream);
 }
 
-.program__chat {
-  display: grid;
-  gap: 10px;
-}
-
-.program__message {
-  max-width: 86%;
-  padding: 13px 15px;
-  border-radius: 18px;
-  color: rgba(36, 23, 22, 0.76);
-  font-size: 14px;
-  line-height: 1.38;
-}
-
-.program__message--question {
-  background: rgba(255, 255, 255, 0.78);
-}
-
-.program__message--answer {
-  justify-self: end;
-  background: rgba(62, 39, 35, 0.1);
-}
-
-.program__message-meta {
-  color: rgba(36, 23, 22, 0.55);
-  font-size: 12px;
-  text-align: center;
+.program__support-note {
+  padding: 18px 20px;
+  border: 1px solid rgba(62, 39, 35, 0.09);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(36, 23, 22, 0.74);
+  font-size: 15px;
+  line-height: 1.45;
+  box-shadow: 0 12px 30px rgba(62, 39, 35, 0.07);
 }
 
 .program__cta-wrap {
@@ -948,25 +966,6 @@ main > section:not(.hero) h2 {
   }
 }
 
-@keyframes roadmapLine {
-  from {
-    transform: scaleY(0);
-  }
-
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@media (min-width: 981px) {
-  .program__roadmap {
-    grid-template-rows: repeat(5, minmax(0, 1fr));
-  }
-
-  .program__step {
-    align-content: start;
-  }
-}
 @media (max-width: 980px) {
   .program__body,
   .program__panel--support {
@@ -1005,10 +1004,6 @@ main > section:not(.hero) h2 {
     padding: 22px;
   }
 
-  .program__roadmap-line {
-    left: 37px;
-  }
-
   .program__roadmap {
     order: 2;
   }
@@ -1045,8 +1040,8 @@ main > section:not(.hero) h2 {
     padding: 8px 5px;
   }
 
-  .program__message {
-    max-width: 96%;
+  .program__support-note {
+    padding: 16px;
   }
 }
 
@@ -1067,7 +1062,6 @@ main > section:not(.hero) h2 {
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-up,
-  .program__roadmap-line,
   .program__panel,
   .program__cta {
     animation: none;
