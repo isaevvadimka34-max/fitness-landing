@@ -6,6 +6,172 @@ document.addEventListener('DOMContentLoaded', () => {
   const audienceNoteText = document.querySelector('.audience__note-text');
   const audienceNoteLink = document.querySelector('.audience__note-link');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const resultPhotos = [
+    {
+      id: 'result-01',
+      src: 'assets/img/proof/web/result-01-featured.jpg',
+      fullSrc: 'assets/img/proof/web/result-01-featured.jpg',
+      alt: 'Фотоотзыв ученицы курса с боковым сравнением результата',
+      title: 'Кейс 01 · 1,5 месяца',
+      caption: 'Крупный фотоотзыв ученицы курса',
+      isFeatured: true,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      id: 'result-02',
+      src: 'assets/img/proof/web/result-02.jpg',
+      fullSrc: 'assets/img/proof/web/result-02.jpg',
+      alt: 'Фотоотзыв ученицы курса с боковым сравнением до и после',
+      title: 'Кейс 02 · 1,5 месяца',
+      caption: 'Сравнение результата в одном ракурсе',
+      isFeatured: false,
+      previewFit: 'cover',
+      previewPosition: 'center 66%',
+      aspectRatio: '1 / 1',
+    },
+    {
+      id: 'result-03',
+      src: 'assets/img/proof/web/result-03.jpg',
+      fullSrc: 'assets/img/proof/web/result-03.jpg',
+      alt: 'Фотоотзыв ученицы курса с фронтальным сравнением до и после',
+      title: 'Кейс 03 · 1,5 месяца',
+      caption: 'Фотоотзыв ученицы курса',
+      isFeatured: false,
+      previewFit: 'cover',
+      previewPosition: 'center 64%',
+      aspectRatio: '1 / 1',
+    },
+    {
+      id: 'result-04',
+      src: 'assets/img/proof/web/result-04.jpg',
+      fullSrc: 'assets/img/proof/web/result-04.jpg',
+      alt: 'Фотоотзыв ученицы курса со сравнением в нескольких ракурсах',
+      title: 'Кейс 04 · 1,5 месяца',
+      caption: 'Сравнение в нескольких ракурсах',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      id: 'result-05',
+      src: 'assets/img/proof/web/result-05.jpg',
+      fullSrc: 'assets/img/proof/web/result-05.jpg',
+      alt: 'Фотоотзыв ученицы курса с боковым сравнением результата',
+      title: 'Кейс 05 · 1,5 месяца',
+      caption: 'Визуальный результат прохождения системы',
+      isFeatured: false,
+      previewFit: 'cover',
+      previewPosition: 'center 65%',
+      aspectRatio: '1 / 1',
+    },
+    {
+      id: 'result-06',
+      src: 'assets/img/proof/web/result-06.jpg',
+      fullSrc: 'assets/img/proof/web/result-06.jpg',
+      alt: 'Фотоотзыв ученицы курса с боковым сравнением до и после',
+      title: 'Кейс 06 · 1,5 месяца',
+      caption: 'Фотоотзыв после работы по программе',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      id: 'result-07',
+      src: 'assets/img/proof/web/result-07.jpg',
+      fullSrc: 'assets/img/proof/web/result-07.jpg',
+      alt: 'Фотоотзыв ученицы курса с несколькими ракурсами сравнения',
+      title: 'Кейс 07 · 1,5 месяца',
+      caption: 'Результат регулярных тренировок',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+  ];
+
+  const resultsById = new Map(resultPhotos.map((photo) => [photo.id, photo]));
+  const resultLinks = document.querySelectorAll('[data-result-open]');
+  const lightbox = document.querySelector('.results__lightbox');
+  const lightboxImage = document.querySelector('.results__lightbox-image');
+  const lightboxClose = document.querySelector('.results__lightbox-close');
+  let lastResultTrigger = null;
+
+  resultLinks.forEach((link) => {
+    const photo = resultsById.get(link.dataset.resultOpen);
+    const image = link.querySelector('img');
+
+    if (!photo || !image) {
+      return;
+    }
+
+    link.href = photo.fullSrc;
+    link.style.setProperty('--result-fit', photo.previewFit);
+    link.style.setProperty('--result-position', photo.previewPosition);
+    link.style.setProperty('--result-ratio', photo.aspectRatio);
+    image.src = photo.src;
+    image.alt = photo.alt;
+  });
+
+  const closeLightbox = () => {
+    if (!lightbox || !lightboxImage || lightbox.hidden) {
+      return;
+    }
+
+    lightbox.hidden = true;
+    lightboxImage.src = '';
+    lightboxImage.alt = 'Полное фотоотзыв ученицы курса';
+    document.body.classList.remove('is-lightbox-open');
+
+    if (lastResultTrigger) {
+      lastResultTrigger.focus();
+    }
+  };
+
+  const openLightbox = (photo, trigger) => {
+    if (!lightbox || !lightboxImage || !lightboxClose) {
+      return;
+    }
+
+    lastResultTrigger = trigger;
+    lightboxImage.src = photo.fullSrc;
+    lightboxImage.alt = photo.alt;
+    lightbox.hidden = false;
+    document.body.classList.add('is-lightbox-open');
+    lightboxClose.focus();
+  };
+
+  resultLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const photo = resultsById.get(link.dataset.resultOpen);
+
+      if (!photo) {
+        return;
+      }
+
+      event.preventDefault();
+      openLightbox(photo, link);
+    });
+  });
+
+  if (lightbox && lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  }
 
   const getPointWord = (count) => {
     const lastTwo = count % 100;
@@ -58,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    audienceNoteText.textContent = 'Gym Girls Club — не про гонку и жёсткие правила. Здесь ты собираешь тренировки, питание и прогресс в спокойную понятную систему';
+    audienceNoteText.textContent = 'Gym Girls Club — это забота о себе через тренировки, питание и систему, которая помогает прийти к результату спокойно и без\u00a0выгорания';
     audienceNoteText.parentElement.classList.remove('is-active');
     audienceNoteLink.hidden = true;
   };
