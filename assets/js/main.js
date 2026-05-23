@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
   const audienceItems = document.querySelectorAll('.audience__chip, .audience__note');
@@ -8,46 +8,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const resultPhotos = [
     {
-      id: 'result-01',
-      src: 'assets/img/proof/web/result-01-featured.jpg',
-      fullSrc: 'assets/img/proof/web/result-01-featured.jpg',
-      alt: 'Фотоотзыв ученицы курса с боковым сравнением результата',
+      imageId: 'student-result-01',
+      caseId: 'case-01',
+      src: 'assets/img/proof/web/student-result-01.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-01.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 01',
       title: 'Кейс 01 · 1,5 месяца',
-      caption: 'Крупный фотоотзыв ученицы курса',
-      isFeatured: true,
+      caption: 'Фотоотзыв ученицы курса',
+      isFeatured: false,
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
     },
     {
-      id: 'result-02',
-      src: 'assets/img/proof/web/result-02.jpg',
-      fullSrc: 'assets/img/proof/web/result-02.jpg',
-      alt: 'Фотоотзыв ученицы курса с боковым сравнением до и после',
+      imageId: 'student-result-02',
+      caseId: 'case-02',
+      src: 'assets/img/proof/web/student-result-02.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-02.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 02',
       title: 'Кейс 02 · 1,5 месяца',
-      caption: 'Сравнение результата в одном ракурсе',
-      isFeatured: false,
-      previewFit: 'cover',
-      previewPosition: 'center 66%',
-      aspectRatio: '1 / 1',
-    },
-    {
-      id: 'result-03',
-      src: 'assets/img/proof/web/result-03.jpg',
-      fullSrc: 'assets/img/proof/web/result-03.jpg',
-      alt: 'Фотоотзыв ученицы курса с фронтальным сравнением до и после',
-      title: 'Кейс 03 · 1,5 месяца',
       caption: 'Фотоотзыв ученицы курса',
       isFeatured: false,
-      previewFit: 'cover',
-      previewPosition: 'center 64%',
+      previewFit: 'contain',
+      previewPosition: 'center center',
       aspectRatio: '1 / 1',
     },
     {
-      id: 'result-04',
-      src: 'assets/img/proof/web/result-04.jpg',
-      fullSrc: 'assets/img/proof/web/result-04.jpg',
-      alt: 'Фотоотзыв ученицы курса со сравнением в нескольких ракурсах',
+      imageId: 'student-result-03',
+      caseId: 'case-03',
+      src: 'assets/img/proof/web/student-result-03.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-03.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 03',
+      title: 'Кейс 03 · 1,5 месяца',
+      caption: 'Сравнение результата в одном ракурсе',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      imageId: 'student-result-04',
+      caseId: 'case-04',
+      src: 'assets/img/proof/web/student-result-04.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-04.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 04',
       title: 'Кейс 04 · 1,5 месяца',
       caption: 'Сравнение в нескольких ракурсах',
       isFeatured: false,
@@ -56,23 +60,53 @@ document.addEventListener('DOMContentLoaded', () => {
       aspectRatio: '1 / 1',
     },
     {
-      id: 'result-05',
-      src: 'assets/img/proof/web/result-05.jpg',
-      fullSrc: 'assets/img/proof/web/result-05.jpg',
-      alt: 'Фотоотзыв ученицы курса с боковым сравнением результата',
+      imageId: 'student-result-05',
+      caseId: 'case-05',
+      src: 'assets/img/proof/web/student-result-05.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-05.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 05',
       title: 'Кейс 05 · 1,5 месяца',
       caption: 'Визуальный результат прохождения системы',
       isFeatured: false,
-      previewFit: 'cover',
-      previewPosition: 'center 65%',
+      previewFit: 'contain',
+      previewPosition: 'center center',
       aspectRatio: '1 / 1',
     },
     {
-      id: 'result-06',
-      src: 'assets/img/proof/web/result-06.jpg',
-      fullSrc: 'assets/img/proof/web/result-06.jpg',
-      alt: 'Фотоотзыв ученицы курса с боковым сравнением до и после',
+      imageId: 'student-result-06',
+      caseId: 'case-06',
+      src: 'assets/img/proof/web/student-result-06.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-06.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 06, боковой ракурс',
       title: 'Кейс 06 · 1,5 месяца',
+      caption: 'Один отзыв · боковой ракурс',
+      pairLabel: 'одна ученица · 2 ракурса',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      imageId: 'student-result-11',
+      caseId: 'case-06',
+      src: 'assets/img/proof/web/student-result-11.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-11.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 06, фронтальный ракурс',
+      title: 'Кейс 06 · 1,5 месяца',
+      caption: 'Один отзыв · фронтальный ракурс',
+      pairLabel: 'одна ученица · 2 ракурса',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      imageId: 'student-result-07',
+      caseId: 'case-07',
+      src: 'assets/img/proof/web/student-result-07.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-07.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 07',
+      title: 'Кейс 07 · 1,5 месяца',
       caption: 'Фотоотзыв после работы по программе',
       isFeatured: false,
       previewFit: 'contain',
@@ -80,12 +114,39 @@ document.addEventListener('DOMContentLoaded', () => {
       aspectRatio: '1 / 1',
     },
     {
-      id: 'result-07',
-      src: 'assets/img/proof/web/result-07.jpg',
-      fullSrc: 'assets/img/proof/web/result-07.jpg',
-      alt: 'Фотоотзыв ученицы курса с несколькими ракурсами сравнения',
-      title: 'Кейс 07 · 1,5 месяца',
+      imageId: 'student-result-08',
+      caseId: 'case-08',
+      src: 'assets/img/proof/web/student-result-08.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-08.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 08',
+      title: 'Кейс 08 · 1,5 месяца',
       caption: 'Результат регулярных тренировок',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      imageId: 'student-result-09',
+      caseId: 'case-09',
+      src: 'assets/img/proof/web/student-result-09.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-09.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 09',
+      title: 'Кейс 09 · 1,5 месяца',
+      caption: 'Сравнение результата в одном ракурсе',
+      isFeatured: false,
+      previewFit: 'contain',
+      previewPosition: 'center center',
+      aspectRatio: '1 / 1',
+    },
+    {
+      imageId: 'student-result-10',
+      caseId: 'case-10',
+      src: 'assets/img/proof/web/student-result-10.jpg',
+      fullSrc: 'assets/img/proof/web/student-result-10.jpg',
+      alt: 'Фотоотзыв ученицы курса, кейс 10',
+      title: 'Кейс 10 · 1,5 месяца',
+      caption: 'Визуальный результат прохождения системы',
       isFeatured: false,
       previewFit: 'contain',
       previewPosition: 'center center',
@@ -93,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
 
-  const resultsById = new Map(resultPhotos.map((photo) => [photo.id, photo]));
+  const resultsById = new Map(resultPhotos.map((photo) => [photo.imageId, photo]));
   const resultLinks = document.querySelectorAll('[data-result-open]');
   const lightbox = document.querySelector('.results__lightbox');
   const lightboxImage = document.querySelector('.results__lightbox-image');
@@ -171,6 +232,60 @@ document.addEventListener('DOMContentLoaded', () => {
         closeLightbox();
       }
     });
+  }
+  const resultsTrack = document.querySelector('[data-results-track]');
+  const resultsProgress = document.querySelector('[data-results-progress]');
+  const resultScrollButtons = document.querySelectorAll('[data-results-scroll]');
+
+  const updateResultsProgress = () => {
+    if (!resultsTrack || !resultsProgress) {
+      return;
+    }
+
+    const maxScroll = resultsTrack.scrollWidth - resultsTrack.clientWidth;
+    const visibleRatio = resultsTrack.scrollWidth > 0
+      ? resultsTrack.clientWidth / resultsTrack.scrollWidth
+      : 1;
+    const thumbWidth = Math.max(visibleRatio * 100, 16);
+    const travel = 100 - thumbWidth;
+    const progress = maxScroll > 0
+      ? (resultsTrack.scrollLeft / maxScroll) * travel
+      : 0;
+
+    resultsProgress.style.width = `${thumbWidth}%`;
+    resultsProgress.style.marginLeft = `${progress}%`;
+  };
+
+  const getResultsScrollAmount = () => {
+    if (!resultsTrack) {
+      return 0;
+    }
+
+    const firstCard = resultsTrack.querySelector('.results__card');
+    const trackStyles = window.getComputedStyle(resultsTrack);
+    const gap = Number.parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
+
+    return firstCard ? firstCard.getBoundingClientRect().width + gap : resultsTrack.clientWidth;
+  };
+
+  resultScrollButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!resultsTrack) {
+        return;
+      }
+
+      const direction = button.dataset.resultsScroll === 'prev' ? -1 : 1;
+      resultsTrack.scrollBy({
+        left: direction * getResultsScrollAmount(),
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
+    });
+  });
+
+  if (resultsTrack) {
+    resultsTrack.addEventListener('scroll', updateResultsProgress, { passive: true });
+    window.addEventListener('resize', updateResultsProgress);
+    updateResultsProgress();
   }
 
   const getPointWord = (count) => {
