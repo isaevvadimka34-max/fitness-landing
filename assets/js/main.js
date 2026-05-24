@@ -6,6 +6,266 @@ document.addEventListener('DOMContentLoaded', () => {
   const audienceNoteText = document.querySelector('.audience__note-text');
   const audienceNoteLink = document.querySelector('.audience__note-link');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tariffPlans = [
+    {
+      id: 'angels',
+      title: 'Angels Club',
+      badge: 'ОСНОВНОЙ ПОТОК',
+      highlight: '',
+      description: 'Путь внутри комьюнити и системы: тренировки, таблица прогресса, материалы, поддержка и проверки техники.',
+      price: '',
+      oldPrice: '',
+      image: 'assets/img/tariffs/angels-club.jpg',
+      imageAlt: 'Автор курса в пудровом спортивном комплекте, визуал тарифа Angels Club',
+      imageClass: 'tariffs__media--portrait',
+      features: [
+        'тренировки для дома и зала с прогрессией нагрузки',
+        'видео с техникой выполнения',
+        'умная таблица с встроенной периодизацией',
+        'общий чат поддержки со мной',
+        'проверка техники 1 раз в неделю по лимитам',
+        'питание без ограничений: 125+ рецептов, сборники, калькулятор КБЖУ, гайды',
+        'комплексы на кор и осанку',
+        'работа над лимфой: дыхательные практики',
+      ],
+      note: '',
+      chips: [],
+      cta: 'Выбрать Angels Club',
+      variant: 'main',
+    },
+    {
+      id: 'private',
+      title: 'Private Club',
+      badge: 'ЛИЧНОЕ ВЕДЕНИЕ',
+      highlight: '',
+      description: 'Более глубокое сопровождение и личная работа на протяжении потока.',
+      price: '',
+      oldPrice: '',
+      image: 'assets/img/tariffs/private-club.jpg',
+      imageAlt: 'Автор курса выполняет упражнение на коврике, визуал тарифа Private Club',
+      imageClass: 'tariffs__media--wide',
+      features: [
+        'всё, что входит в Angels Club',
+        'личное сопровождение от меня',
+        'индивидуальные рекомендации и корректировки',
+        'более глубокий разбор техники',
+        'помощь с прогрессией нагрузки',
+        'адаптация программы под вас',
+        'контроль прогресса на протяжении потока',
+        'приоритетная поддержка и ответы',
+      ],
+      note: '',
+      chips: [],
+      cta: 'Хочу личное ведение',
+      variant: 'premium',
+    },
+    {
+      id: 'back',
+      title: 'Back to GGC',
+      badge: 'ДЛЯ ВЫПУСКНИЦ · −50%',
+      highlight: '',
+      description: 'Возвращение в систему и новый этап для себя.',
+      price: '',
+      oldPrice: '',
+      image: 'assets/img/tariffs/back-to-ggc-discount.png',
+      imageAlt: 'Пудровая premium-графика со скидкой 50% для выпускниц',
+      imageClass: 'tariffs__media--graphic',
+      text: 'Для тех, кто уже был на моём курсе и\u00a0хочет вернуться в поток, обновить результаты и пройти новый этап вместе с\u00a0нами.',
+      features: [
+        'всё, что входит в Angels Club',
+        'доступ к новому потоку',
+        'возвращение в систему тренировок',
+        'специальная скидка 50% для участниц прошлых\u00a0потоков',
+      ],
+      note: '',
+      chips: [],
+      cta: 'Вернуться в GGC',
+      variant: 'alumni',
+    },
+    {
+      id: 'materials',
+      title: 'Центр материалов',
+      badge: 'САМОСТОЯТЕЛЬНЫЙ ДОСТУП',
+      highlight: '',
+      description: 'Материалы курса без участия в потоке и без сопровождения.',
+      price: '',
+      oldPrice: '',
+      image: 'assets/img/tariffs/materials-center-premium.png',
+      imageAlt: 'Минималистичный premium-визуал центра материалов с телефоном, папкой и карандашом',
+      imageClass: 'tariffs__media--materials',
+      features: [
+        '125+ рецептов',
+        'сборники по питанию',
+        'калькулятор КБЖУ',
+        'гайды по питанию, режиму и телу',
+        'комплексы на кор и осанку',
+        'дыхательные практики для работы с лимфой',
+      ],
+      note: 'Без чата, проверки техники, личных корректировок и тренировочного потока.',
+      chips: [],
+      cta: 'Получить материалы',
+      variant: 'materials',
+    },
+  ];
+
+  const tariffsGrid = document.querySelector('[data-tariffs-grid]');
+  const createTextElement = (tagName, className, text) => {
+    const element = document.createElement(tagName);
+    if (className) {
+      element.className = className;
+    }
+    element.textContent = text;
+    return element;
+  };
+
+  if (tariffsGrid) {
+    tariffPlans.forEach((tariff) => {
+      const card = document.createElement('article');
+      card.className = `tariffs__card tariffs__card--${tariff.variant} reveal-up`;
+      card.dataset.tariffId = tariff.id;
+
+      const top = document.createElement('div');
+      top.className = 'tariffs__card-top';
+
+      const badge = createTextElement('span', 'tariffs__badge', tariff.badge);
+      top.append(badge);
+
+      if (tariff.highlight) {
+        top.append(createTextElement('span', 'tariffs__highlight', tariff.highlight));
+      }
+
+      card.append(top);
+
+      if (tariff.image) {
+        const media = document.createElement('figure');
+        media.className = `tariffs__media ${tariff.imageClass || ''}`.trim();
+
+        const image = document.createElement('img');
+        image.src = tariff.image;
+        image.alt = tariff.imageAlt || '';
+        image.loading = 'lazy';
+        image.addEventListener('error', () => {
+          media.hidden = true;
+        }, { once: true });
+
+        media.append(image);
+        card.append(media);
+      }
+
+      card.append(createTextElement('h3', 'tariffs__title', tariff.title));
+      card.append(createTextElement('p', 'tariffs__description', tariff.description));
+
+      if (tariff.text) {
+        card.append(createTextElement('p', 'tariffs__text', tariff.text));
+      }
+
+      if (tariff.price) {
+        const price = document.createElement('p');
+        price.className = 'tariffs__price';
+        if (tariff.oldPrice) {
+          price.append(createTextElement('s', 'tariffs__old-price', tariff.oldPrice));
+        }
+        price.append(createTextElement('strong', '', tariff.price));
+        card.append(price);
+      }
+
+      const list = document.createElement('ul');
+      list.className = 'tariffs__features';
+      tariff.features.forEach((feature) => {
+        list.append(createTextElement('li', '', feature));
+      });
+      card.append(list);
+
+      if (tariff.chips.length) {
+        const chips = document.createElement('div');
+        chips.className = 'tariffs__chips';
+        tariff.chips.forEach((chip) => {
+          chips.append(createTextElement('span', 'tariffs__chip', chip));
+        });
+        card.append(chips);
+      }
+
+      if (tariff.note) {
+        card.append(createTextElement('p', 'tariffs__note', tariff.note));
+      }
+
+      const action = document.createElement('a');
+      action.className = 'program__cta tariffs__cta';
+      action.href = '#';
+      action.dataset.tariffCta = tariff.id;
+      action.textContent = tariff.cta;
+      card.append(action);
+
+      tariffsGrid.append(card);
+    });
+  }
+
+  const tariffsCarousel = document.querySelector('.tariffs__carousel');
+  const tariffsTrack = document.querySelector('[data-tariffs-track]');
+  const tariffsProgress = document.querySelector('[data-tariffs-progress]');
+  const tariffScrollButtons = document.querySelectorAll('[data-tariffs-scroll]');
+
+  const updateTariffsProgress = () => {
+    if (!tariffsTrack || !tariffsProgress) {
+      return;
+    }
+
+    const maxScroll = tariffsTrack.scrollWidth - tariffsTrack.clientWidth;
+    const visibleRatio = tariffsTrack.scrollWidth > 0
+      ? tariffsTrack.clientWidth / tariffsTrack.scrollWidth
+      : 1;
+    const thumbWidth = Math.max(visibleRatio * 100, 16);
+    const travel = 100 - thumbWidth;
+    const progress = maxScroll > 0
+      ? (tariffsTrack.scrollLeft / maxScroll) * travel
+      : 0;
+    const isAtStart = tariffsTrack.scrollLeft <= 1;
+    const isAtEnd = maxScroll <= 1 || tariffsTrack.scrollLeft >= maxScroll - 1;
+    const hasScroll = maxScroll > 1;
+
+    tariffsProgress.style.width = `${thumbWidth}%`;
+    tariffsProgress.style.marginLeft = `${progress}%`;
+    tariffsCarousel?.classList.toggle('is-at-end', isAtEnd);
+    tariffsCarousel?.classList.toggle('has-scroll', hasScroll);
+    tariffScrollButtons.forEach((button) => {
+      const isPrev = button.dataset.tariffsScroll === 'prev';
+      button.disabled = !hasScroll || (isPrev ? isAtStart : isAtEnd);
+    });
+  };
+
+  const getTariffsScrollAmount = () => {
+    if (!tariffsTrack) {
+      return 0;
+    }
+
+    const firstCard = tariffsTrack.querySelector('.tariffs__card');
+    const trackStyles = window.getComputedStyle(tariffsTrack);
+    const gap = Number.parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
+
+    return firstCard ? firstCard.getBoundingClientRect().width + gap : tariffsTrack.clientWidth;
+  };
+
+  tariffScrollButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!tariffsTrack) {
+        return;
+      }
+
+      const direction = button.dataset.tariffsScroll === 'prev' ? -1 : 1;
+      tariffsTrack.scrollBy({
+        left: direction * getTariffsScrollAmount(),
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
+      window.requestAnimationFrame(updateTariffsProgress);
+    });
+  });
+
+  if (tariffsTrack) {
+    tariffsTrack.addEventListener('scroll', updateTariffsProgress, { passive: true });
+    window.addEventListener('resize', updateTariffsProgress);
+    updateTariffsProgress();
+  }
+
   const resultPhotos = [
     {
       imageId: 'student-result-01',
