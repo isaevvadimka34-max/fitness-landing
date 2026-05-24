@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-01.jpg',
       fullSrc: 'assets/img/proof/web/student-result-01.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 01',
-      title: 'Кейс 01 · 1,5 месяца',
-      caption: 'Фотоотзыв ученицы курса',
-      isFeatured: false,
+      title: 'Кейс 01',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -26,9 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-02.jpg',
       fullSrc: 'assets/img/proof/web/student-result-02.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 02',
-      title: 'Кейс 02 · 1,5 месяца',
-      caption: 'Фотоотзыв ученицы курса',
-      isFeatured: false,
+      title: 'Кейс 02',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -39,9 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-03.jpg',
       fullSrc: 'assets/img/proof/web/student-result-03.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 03',
-      title: 'Кейс 03 · 1,5 месяца',
-      caption: 'Сравнение результата в одном ракурсе',
-      isFeatured: false,
+      title: 'Кейс 03',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -52,9 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-04.jpg',
       fullSrc: 'assets/img/proof/web/student-result-04.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 04',
-      title: 'Кейс 04 · 1,5 месяца',
-      caption: 'Сравнение в нескольких ракурсах',
-      isFeatured: false,
+      title: 'Кейс 04',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -65,9 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-05.jpg',
       fullSrc: 'assets/img/proof/web/student-result-05.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 05',
-      title: 'Кейс 05 · 1,5 месяца',
-      caption: 'Визуальный результат прохождения системы',
-      isFeatured: false,
+      title: 'Кейс 05',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -78,10 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-06.jpg',
       fullSrc: 'assets/img/proof/web/student-result-06.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 06, боковой ракурс',
-      title: 'Кейс 06 · 1,5 месяца',
-      caption: 'Один отзыв · боковой ракурс',
-      pairLabel: 'одна ученица · 2 ракурса',
-      isFeatured: false,
+      title: 'Кейс 06 · ракурс 1',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -92,10 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-11.jpg',
       fullSrc: 'assets/img/proof/web/student-result-11.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 06, фронтальный ракурс',
-      title: 'Кейс 06 · 1,5 месяца',
-      caption: 'Один отзыв · фронтальный ракурс',
-      pairLabel: 'одна ученица · 2 ракурса',
-      isFeatured: false,
+      title: 'Кейс 06 · ракурс 2',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -106,9 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'assets/img/proof/web/student-result-07.jpg',
       fullSrc: 'assets/img/proof/web/student-result-07.jpg',
       alt: 'Фотоотзыв ученицы курса, кейс 07',
-      title: 'Кейс 07 · 1,5 месяца',
-      caption: 'Фотоотзыв после работы по программе',
-      isFeatured: false,
+      title: 'Кейс 07',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -118,36 +100,30 @@ document.addEventListener('DOMContentLoaded', () => {
       caseId: 'case-08',
       src: 'assets/img/proof/web/student-result-08.jpg',
       fullSrc: 'assets/img/proof/web/student-result-08.jpg',
-      alt: 'Фотоотзыв ученицы курса, кейс 08',
-      title: 'Кейс 08 · 1,5 месяца',
-      caption: 'Результат регулярных тренировок',
-      isFeatured: false,
+      alt: 'Фотоотзыв ученицы курса, кейс 08, ракурс 1',
+      title: 'Кейс 08 · ракурс 1',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
     },
     {
       imageId: 'student-result-09',
-      caseId: 'case-09',
+      caseId: 'case-08',
       src: 'assets/img/proof/web/student-result-09.jpg',
       fullSrc: 'assets/img/proof/web/student-result-09.jpg',
-      alt: 'Фотоотзыв ученицы курса, кейс 09',
-      title: 'Кейс 09 · 1,5 месяца',
-      caption: 'Сравнение результата в одном ракурсе',
-      isFeatured: false,
+      alt: 'Фотоотзыв ученицы курса, кейс 08, ракурс 2',
+      title: 'Кейс 08 · ракурс 2',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
     },
     {
       imageId: 'student-result-10',
-      caseId: 'case-10',
+      caseId: 'case-09',
       src: 'assets/img/proof/web/student-result-10.jpg',
       fullSrc: 'assets/img/proof/web/student-result-10.jpg',
-      alt: 'Фотоотзыв ученицы курса, кейс 10',
-      title: 'Кейс 10 · 1,5 месяца',
-      caption: 'Визуальный результат прохождения системы',
-      isFeatured: false,
+      alt: 'Фотоотзыв ученицы курса, кейс 09',
+      title: 'Кейс 09',
       previewFit: 'contain',
       previewPosition: 'center center',
       aspectRatio: '1 / 1',
@@ -233,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  const resultsCarousel = document.querySelector('.results__carousel');
   const resultsTrack = document.querySelector('[data-results-track]');
   const resultsProgress = document.querySelector('[data-results-progress]');
   const resultScrollButtons = document.querySelectorAll('[data-results-scroll]');
@@ -251,9 +228,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress = maxScroll > 0
       ? (resultsTrack.scrollLeft / maxScroll) * travel
       : 0;
+    const isAtStart = resultsTrack.scrollLeft <= 1;
+    const isAtEnd = maxScroll <= 1 || resultsTrack.scrollLeft >= maxScroll - 1;
 
     resultsProgress.style.width = `${thumbWidth}%`;
     resultsProgress.style.marginLeft = `${progress}%`;
+    resultsCarousel?.classList.toggle('is-at-end', isAtEnd);
+    resultScrollButtons.forEach((button) => {
+      const isPrev = button.dataset.resultsScroll === 'prev';
+      button.disabled = isPrev ? isAtStart : isAtEnd;
+    });
   };
 
   const getResultsScrollAmount = () => {
@@ -279,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         left: direction * getResultsScrollAmount(),
         behavior: reduceMotion ? 'auto' : 'smooth',
       });
+      window.requestAnimationFrame(updateResultsProgress);
     });
   });
 

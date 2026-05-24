@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Статический лендинг фитнес-курса с будущей оплатой через GetCourse.">
   <title>Фитнес-курс — лендинг</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=program-copy-1">
+  <link rel="stylesheet" href="assets/css/style.css?v=results-case-pairs-1">
 </head>
 <body>
   <header>
@@ -208,30 +208,20 @@
       <div class="results__inner">
         <div class="results__heading reveal-up">
           <h2 id="results-eyebrow" class="results__eyebrow">РЕЗУЛЬТАТЫ УЧЕНИЦ</h2>
-          <p class="results__lead">Реальные фотоотзывы учениц, которые проходили систему: тренировки по плану, работа с техникой, прогрессия нагрузки и поддержка в процессе</p>
         </div>
 
-        <article class="results__featured reveal-up" aria-label="Вводный текст о результатах">
-          <div class="results__featured-copy">
-            <h3>1,5 месяца понятного маршрута</h3>
-            <p>Визуальные изменения появляются не из-за хаотичных тренировок, а когда у ученицы есть план: что делать, как выполнять упражнения, как отслеживать прогресс и когда увеличивать нагрузку</p>
-            <p>В курсе ученицы двигаются по структуре: программа → техника → таблица прогресса → поддержка → результат</p>
-
-            <p class="results__disclaimer">* Фото опубликованы с разрешения учениц, результаты индивидуальны</p>
-          </div>
-        </article>
-
-                <div class="results__carousel reveal-up" aria-label="Горизонтальная лента фотоотзывов учениц">
-          <div class="results__carousel-head">
-            <div class="results__carousel-title">
-              <h3>Результаты учениц</h3>
-              <p>Свайпни, чтобы посмотреть ещё</p>
-            </div>
+        <div class="results__meta reveal-up">
+          <div class="results__meta-actions">
+            <span>Листай вправо →</span>
             <div class="results__carousel-controls" aria-label="Управление лентой">
               <button class="results__carousel-arrow" type="button" data-results-scroll="prev" aria-label="Показать предыдущий результат">‹</button>
               <button class="results__carousel-arrow" type="button" data-results-scroll="next" aria-label="Показать следующий результат">›</button>
             </div>
           </div>
+        </div>
+
+        <div class="results__carousel reveal-up" aria-label="Горизонтальная лента фотоотзывов учениц">
+          <div class="results__fade" aria-hidden="true"></div>
 
           <div class="results__track" data-results-track tabindex="0">
             <article class="results__card">
@@ -250,8 +240,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 01 · 1,5 месяца</h3>
-                <p>Фотоотзыв ученицы курса</p>
+                <h3>Кейс 01</h3>
               </div>
             </article>
 
@@ -271,8 +260,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 02 · 1,5 месяца</h3>
-                <p>Фотоотзыв ученицы курса</p>
+                <h3>Кейс 02</h3>
               </div>
             </article>
 
@@ -292,8 +280,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 03 · 1,5 месяца</h3>
-                <p>Сравнение результата в одном ракурсе</p>
+                <h3>Кейс 03</h3>
               </div>
             </article>
 
@@ -313,8 +300,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 04 · 1,5 месяца</h3>
-                <p>Сравнение в нескольких ракурсах</p>
+                <h3>Кейс 04</h3>
               </div>
             </article>
 
@@ -334,8 +320,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 05 · 1,5 месяца</h3>
-                <p>Визуальный результат прохождения системы</p>
+                <h3>Кейс 05</h3>
               </div>
             </article>
 
@@ -355,9 +340,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <span class="results__pair-label">одна ученица · 2 ракурса</span>
-                <h3>Кейс 06 · 1,5 месяца</h3>
-                <p>Один отзыв · боковой ракурс</p>
+                <h3>Кейс 06 · ракурс 1</h3>
               </div>
             </article>
 
@@ -377,9 +360,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <span class="results__pair-label">одна ученица · 2 ракурса</span>
-                <h3>Кейс 06 · 1,5 месяца</h3>
-                <p>Один отзыв · фронтальный ракурс</p>
+                <h3>Кейс 06 · ракурс 2</h3>
               </div>
             </article>
 
@@ -399,8 +380,7 @@
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 07 · 1,5 месяца</h3>
-                <p>Фотоотзыв после работы по программе</p>
+                <h3>Кейс 07</h3>
               </div>
             </article>
 
@@ -413,15 +393,14 @@
               >
                 <img
                   src="assets/img/proof/web/student-result-08.jpg"
-                  alt="Фотоотзыв ученицы курса, кейс 08"
+                  alt="Фотоотзыв ученицы курса, кейс 08, ракурс 1"
                   width="1003"
                   height="1003"
                   loading="lazy"
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 08 · 1,5 месяца</h3>
-                <p>Результат регулярных тренировок</p>
+                <h3>Кейс 08 · ракурс 1</h3>
               </div>
             </article>
 
@@ -434,15 +413,14 @@
               >
                 <img
                   src="assets/img/proof/web/student-result-09.jpg"
-                  alt="Фотоотзыв ученицы курса, кейс 09"
+                  alt="Фотоотзыв ученицы курса, кейс 08, ракурс 2"
                   width="1023"
                   height="1023"
                   loading="lazy"
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 09 · 1,5 месяца</h3>
-                <p>Сравнение результата в одном ракурсе</p>
+                <h3>Кейс 08 · ракурс 2</h3>
               </div>
             </article>
 
@@ -455,23 +433,31 @@
               >
                 <img
                   src="assets/img/proof/web/student-result-10.jpg"
-                  alt="Фотоотзыв ученицы курса, кейс 10"
+                  alt="Фотоотзыв ученицы курса, кейс 09"
                   width="1021"
                   height="1021"
                   loading="lazy"
                 >
               </a>
               <div class="results__card-copy">
-                <h3>Кейс 10 · 1,5 месяца</h3>
-                <p>Визуальный результат прохождения системы</p>
+                <h3>Кейс 09</h3>
               </div>
             </article>
           </div>
-
-          <div class="results__progress" aria-hidden="true">
-            <span data-results-progress></span>
-          </div>
         </div>
+
+        <div class="results__progress reveal-up" aria-hidden="true">
+          <span data-results-progress></span>
+        </div>
+
+        <article class="results__route reveal-up" aria-label="Вводный текст о результатах">
+          <div class="results__route-copy">
+            <h3>1,5 месяца понятного маршрута</h3>
+            <p>Визуальные изменения появляются не из-за хаотичных тренировок, а когда у ученицы есть план: что делать, как выполнять упражнения, как отслеживать прогресс и когда увеличивать нагрузку</p>
+            <p>В курсе ученицы двигаются по структуре: программа → техника → таблица прогресса → поддержка → результат</p>
+            <p class="results__disclaimer">* Фото опубликованы с разрешения учениц, результаты индивидуальны</p>
+          </div>
+        </article>
 
         <div class="program__cta-wrap results__cta-wrap reveal-up">
           <a class="program__cta results__cta" href="#tariffs">Хочу пройти курс</a>
@@ -533,6 +519,6 @@
     <p>Юридическая информация и ссылки на документы будут добавлены позже</p>
   </footer>
 
-  <script src="assets/js/main.js?v=program-copy-1"></script>
+  <script src="assets/js/main.js?v=results-case-pairs-1"></script>
 </body>
 </html>
