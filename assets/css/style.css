@@ -2181,11 +2181,38 @@ body.is-lightbox-open {
   background: rgba(255, 248, 243, 0.54);
 }
 
+.tariffs__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  margin: 0;
+  color: var(--espresso);
+}
+
+.tariffs__price strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.tariffs__old-price {
+  color: rgba(36, 23, 22, 0.48);
+  font-size: 16px;
+  line-height: 1;
+}
+
 .tariffs__card--premium .tariffs__title,
 .tariffs__card--premium .tariffs__description,
 .tariffs__card--premium .tariffs__text,
-.tariffs__card--premium .tariffs__note {
+.tariffs__card--premium .tariffs__note,
+.tariffs__card--premium .tariffs__price {
   color: rgba(255, 248, 243, 0.88);
+}
+
+.tariffs__card--premium .tariffs__old-price {
+  color: rgba(255, 248, 243, 0.58);
 }
 
 .tariffs__features {
