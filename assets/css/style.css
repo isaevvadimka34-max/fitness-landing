@@ -2270,7 +2270,7 @@ body.is-lightbox-open {
 
 .tariffs__cta {
   margin-top: auto;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .tariffs__card--main .tariffs__cta {
