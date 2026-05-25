@@ -1992,7 +1992,6 @@ body.is-lightbox-open {
 .tariffs__card--alumni {
   border-color: rgba(116, 49, 59, 0.24);
   background:
-    radial-gradient(circle at 92% 8%, rgba(116, 49, 59, 0.16), transparent 34%),
     linear-gradient(145deg, rgba(255, 248, 243, 0.94), rgba(244, 201, 214, 0.34)),
     var(--cream);
   box-shadow: 0 30px 74px rgba(116, 49, 59, 0.12);
