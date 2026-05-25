@@ -1448,15 +1448,7 @@ main > section:not(.hero) h2.results__eyebrow {
 }
 
 .results__fade {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  bottom: 18px;
-  width: clamp(32px, 7vw, 78px);
-  pointer-events: none;
-  background: linear-gradient(90deg, rgba(232, 214, 212, 0), #e8d6d4 82%);
-  transition: opacity 180ms ease;
+  display: none;
 }
 
 .results__carousel.is-at-end .results__fade {
@@ -2018,25 +2010,6 @@ body.is-lightbox-open {
   box-shadow: 0 28px 70px rgba(62, 39, 35, 0.12);
 }
 
-.tariffs__card--alumni::before,
-.tariffs__card--materials::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 7px;
-}
-
-.tariffs__card--alumni::before {
-  background: linear-gradient(90deg, rgba(116, 49, 59, 0.58), rgba(244, 201, 214, 0.42), rgba(116, 49, 59, 0.18));
-}
-
-.tariffs__card--materials::before {
-  background: linear-gradient(90deg, rgba(62, 39, 35, 0.3), rgba(201, 123, 148, 0.28), rgba(62, 39, 35, 0.08));
-}
-
 .tariffs__card-top,
 .tariffs__chips {
   display: flex;
@@ -2129,9 +2102,9 @@ body.is-lightbox-open {
 }
 
 .tariffs__media--portrait img {
-  object-fit: contain;
-  object-position: center 40%;
-  transform: scale(1.36);
+  object-fit: cover;
+  object-position: center 38%;
+  transform: none;
 }
 
 .tariffs__media--portrait,
@@ -2211,11 +2184,11 @@ body.is-lightbox-open {
 }
 
 .tariffs__price {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px 12px;
-  margin: 0;
+  display: grid;
+  justify-items: start;
+  gap: 5px;
+  margin: auto 0 0;
+  padding-top: 10px;
   color: var(--espresso);
 }
 
@@ -2228,8 +2201,15 @@ body.is-lightbox-open {
 
 .tariffs__old-price {
   color: rgba(36, 23, 22, 0.48);
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
+  text-decoration-color: rgba(36, 23, 22, 0.42);
+  text-decoration-thickness: 1px;
+}
+
+.tariffs__card--alumni .tariffs__price {
+  justify-items: center;
+  text-align: center;
 }
 
 .tariffs__card--premium .tariffs__title,
@@ -2246,7 +2226,7 @@ body.is-lightbox-open {
 
 .tariffs__features {
   display: grid;
-  gap: 10px;
+  gap: 9px;
   margin: 0;
   padding: 2px 0 0;
   list-style: none;
@@ -2255,13 +2235,22 @@ body.is-lightbox-open {
 .tariffs__features li {
   position: relative;
   min-width: 0;
+  padding-left: 20px;
   color: rgba(36, 23, 22, 0.76);
   font-size: 14px;
   line-height: 1.38;
 }
 
 .tariffs__features li::before {
-  content: none;
+  content: "";
+  position: absolute;
+  top: calc((1em * 1.38 - 6px) / 2);
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(201, 123, 148, 0.62);
+  box-shadow: 0 0 0 3px rgba(244, 201, 214, 0.34);
 }
 
 .tariffs__card--premium .tariffs__features li {
@@ -2269,7 +2258,8 @@ body.is-lightbox-open {
 }
 
 .tariffs__card--premium .tariffs__features li::before {
-  background: rgba(244, 201, 214, 0.74);
+  background: rgba(255, 248, 243, 0.72);
+  box-shadow: 0 0 0 3px rgba(244, 201, 214, 0.22);
 }
 
 .tariffs__chip {
@@ -2292,6 +2282,10 @@ body.is-lightbox-open {
 .tariffs__cta {
   margin-top: auto;
   align-self: center;
+}
+
+.tariffs__price + .tariffs__cta {
+  margin-top: 0;
 }
 
 .tariffs__card--main .tariffs__cta {
@@ -2578,18 +2572,83 @@ main > section:not(.hero)::before {
   }
 
   .tariffs__card {
-    gap: 14px;
-    padding: 20px;
+    gap: 9px;
+    padding: 16px;
     border-radius: 24px;
+  }
+
+  .tariffs__media {
+    order: 2;
+  }
+
+  .tariffs__title {
+    order: 3;
+  }
+
+  .tariffs__description {
+    order: 4;
+  }
+
+  .tariffs__card-top {
+    order: 1;
+    display: flex;
+    margin: 0 0 1px;
+  }
+
+  .tariffs__text {
+    order: 7;
+  }
+
+  .tariffs__features {
+    order: 6;
+  }
+
+  .tariffs__chips,
+  .tariffs__note {
+    order: 8;
+  }
+
+  .tariffs__price {
+    order: 9;
+  }
+
+  .tariffs__cta {
+    order: 10;
+  }
+
+  .tariffs__badge {
+    padding: 6px 10px;
+    border-color: rgba(116, 49, 59, 0.14);
+    background: rgba(255, 248, 243, 0.34);
+    font-size: 9.5px;
+    letter-spacing: 0.05em;
+  }
+
+  .tariffs__card--premium .tariffs__badge {
+    border-color: rgba(255, 248, 243, 0.2);
+    background: rgba(255, 248, 243, 0.08);
+    color: rgba(255, 248, 243, 0.78);
   }
 
   .tariffs__title,
   .tariffs__card--main .tariffs__title {
-    font-size: clamp(31px, 9vw, 40px);
+    font-size: clamp(30px, 8.6vw, 38px);
+    min-height: 72px;
   }
 
   .tariffs__description {
-    font-size: 15px;
+    min-height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(36, 23, 22, 0.62);
+    font-size: 12.5px;
+    line-height: 1.28;
+  }
+
+  .tariffs__card--premium .tariffs__description {
+    color: rgba(255, 248, 243, 0.68);
   }
 
   .tariffs__media--portrait,
@@ -2599,8 +2658,15 @@ main > section:not(.hero)::before {
     box-shadow: none;
   }
 
+  .tariffs__media,
   .tariffs__media--portrait {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.12 / 1;
+  }
+
+  .tariffs__media--portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .tariffs__media--portrait::after {
@@ -2608,22 +2674,74 @@ main > section:not(.hero)::before {
   }
 
   .tariffs__media--portrait img {
-    object-fit: cover;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 22px;
+    object-fit: contain;
     object-position: center center;
     transform: none;
   }
 
   .tariffs__media--wide img {
-    object-position: center 55%;
+    object-position: center bottom;
     transform: none;
   }
 
+  .tariffs__media--materials {
+    border-color: transparent;
+    background: #f8d9df;
+    box-shadow: none;
+  }
+
+  .tariffs__media--materials img {
+    object-fit: contain;
+  }
+
   .tariffs__features {
-    gap: 9px;
+    gap: 7px;
+  }
+
+  .tariffs__features li {
+    padding-left: 19px;
+    font-size: 13.5px;
+    line-height: 1.32;
+  }
+
+  .tariffs__features li::before {
+    top: calc((1em * 1.32 - 6px) / 2);
+  }
+
+  .tariffs__price {
+    width: 100%;
+    gap: 3px;
+    margin: 8px 0 0;
+    padding: 12px 0 0;
+    border: 0;
+    border-top: 1px solid rgba(201, 123, 148, 0.2);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .tariffs__card--premium .tariffs__price {
+    border-top-color: rgba(255, 248, 243, 0.16);
+  }
+
+  .tariffs__price strong {
+    font-size: clamp(35px, 10vw, 44px);
+  }
+
+  .tariffs__old-price {
+    font-size: 13px;
   }
 
   .tariffs__cta {
     width: 100%;
+    margin-top: auto;
+  }
+
+  .tariffs__price + .tariffs__cta {
+    margin-top: auto;
   }
 
   .faq__accordion {

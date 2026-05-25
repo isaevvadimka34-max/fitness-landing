@@ -19,15 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
       imageAlt: 'Автор курса в пудровом спортивном комплекте, визуал тарифа Angels Club',
       imageClass: 'tariffs__media--portrait',
       features: [
-        'тренировки для зала с прогрессией нагрузки',
-        'видео с техникой выполнения',
-        'умная таблица с встроенной периодизацией',
+        'тренировки для дома/зала с прогрессией нагрузки, видео с техникой',
+        'умная таблица с встроенной периодизацией, она автоматически ведёт весь ваш прогресс',
         'общий чат поддержки со мной',
-        'проверка техники 1 раз в неделю по лимитам',
-        'питание: 125+ рецептов, сборники, калькулятор КБЖУ, гайды',
-        'домашний формат тренировок',
+        'проверка техники от меня раз в неделю по лимитам',
+        'питание без ограничений: 125+ рецептов, сборники, калькулятор кбжу, гайды',
         'комплексы на кор и осанку',
-        'дыхательные практики для работы с лимфой',
+        'работа над лимфой: дыхательные практики',
       ],
       note: '',
       chips: [],
@@ -63,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 'back',
       title: 'Back to GGC',
-      badge: 'ДЛЯ ВЫПУСКНИЦ · −50%',
+      badge: 'ДЛЯ ВЫПУСКНИЦ',
       highlight: '',
       description: 'Возвращение в систему и новый этап для себя.',
-      price: '50%',
+      price: '−50%',
       oldPrice: '',
       image: 'assets/img/tariffs/back-to-ggc-discount.png',
       imageAlt: 'Пудровая premium-графика со скидкой 50% для выпускниц',
@@ -90,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       highlight: '',
       description: 'Материалы курса без участия в потоке и без сопровождения.',
       price: '1 990 ₽',
-      oldPrice: '2 310 ₽',
+      oldPrice: '2 390 ₽',
       image: 'assets/img/tariffs/materials-center-premium.png',
       imageAlt: 'Минималистичный premium-визуал центра материалов с телефоном, папкой и карандашом',
       imageClass: 'tariffs__media--materials',
@@ -160,16 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         card.append(createTextElement('p', 'tariffs__text', tariff.text));
       }
 
-      if (tariff.price) {
-        const price = document.createElement('p');
-        price.className = 'tariffs__price';
-        if (tariff.oldPrice) {
-          price.append(createTextElement('s', 'tariffs__old-price', tariff.oldPrice));
-        }
-        price.append(createTextElement('strong', '', tariff.price));
-        card.append(price);
-      }
-
       const list = document.createElement('ul');
       list.className = 'tariffs__features';
       tariff.features.forEach((feature) => {
@@ -188,6 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (tariff.note) {
         card.append(createTextElement('p', 'tariffs__note', tariff.note));
+      }
+
+      if (tariff.price) {
+        const price = document.createElement('p');
+        price.className = 'tariffs__price';
+        if (tariff.oldPrice) {
+          price.append(createTextElement('s', 'tariffs__old-price', tariff.oldPrice));
+        }
+        price.append(createTextElement('strong', '', tariff.price));
+        card.append(price);
       }
 
       const action = document.createElement('a');
