@@ -84,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Возвращение в систему и новый этап для себя.',
       price: '−50%',
       oldPrice: '',
-      image: 'assets/img/tariffs/back-to-ggc-discount.png',
+      image: '',
       imageAlt: 'Пудровая premium-графика со скидкой 50% для выпускниц',
       imageClass: 'tariffs__media--graphic',
+      discountGraphic: true,
       text: 'Для тех, кто уже был на моём курсе и\u00a0хочет вернуться в поток, обновить результаты и пройти новый этап вместе с\u00a0нами.',
       features: [
         'всё, что входит в Angels Club',
@@ -153,7 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       card.append(top);
 
-      if (tariff.image) {
+      if (tariff.discountGraphic) {
+        const media = document.createElement('figure');
+        media.className = 'tariffs__media tariffs__media--graphic';
+        media.setAttribute('aria-label', tariff.imageAlt || '');
+
+        const frame = document.createElement('div');
+        frame.className = 'tariffs__discount-graphic';
+        frame.append(createTextElement('span', 'tariffs__discount-value', '−50%'));
+        frame.append(createTextElement('span', 'tariffs__discount-label', 'для выпускниц'));
+
+        media.append(frame);
+        card.append(media);
+      } else if (tariff.image) {
         const media = document.createElement('figure');
         media.className = `tariffs__media ${tariff.imageClass || ''}`.trim();
 
