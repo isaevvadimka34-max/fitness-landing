@@ -2124,11 +2124,27 @@ body.is-lightbox-open {
 
 .tariffs__media--portrait img {
   object-fit: contain;
-  object-position: center 44%;
+  object-position: center 40%;
+  transform: scale(1.36);
+}
+
+.tariffs__media--portrait,
+.tariffs__media--materials {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.tariffs__media--portrait {
+  background: transparent;
+}
+
+.tariffs__media--materials {
+  background: #f8d9df;
 }
 
 .tariffs__media--wide img {
   object-position: center 55%;
+  transform: scale(1.08);
 }
 
 .tariffs__media--graphic img,
@@ -2138,6 +2154,8 @@ body.is-lightbox-open {
 
 .tariffs__media--materials img {
   object-fit: contain;
+  object-position: center center;
+  transform: none;
 }
 
 .tariffs__card--premium .tariffs__media {
