@@ -2791,7 +2791,7 @@ main > section:not(.hero)::before {
   .tariffs__card--premium .tariffs__old-price {
     color: rgba(255, 248, 243, 0.7);
     text-decoration-color: rgba(255, 248, 243, 0.88);
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
   }
 
   .tariffs__cta {
