@@ -1790,9 +1790,7 @@ body.is-lightbox-open {
 }
 .tariffs {
   position: relative;
-  background:
-    radial-gradient(circle at 82% 10%, rgba(255, 248, 243, 0.46), transparent 30%),
-    #e8d6d4;
+  background: #e8d6d4;
 }
 
 .tariffs::before {
