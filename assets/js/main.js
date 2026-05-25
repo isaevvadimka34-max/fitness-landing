@@ -12,21 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Angels Club',
       badge: 'ОСНОВНОЙ ПОТОК',
       highlight: '',
-      description: 'Путь внутри комьюнити и системы: тренировки, таблица прогресса, материалы, поддержка и проверки техники.',
+      description: 'Весь путь проходим вместе в течение 1,5 месяцев.',
       price: '7 490 ₽',
       oldPrice: '8 490 ₽',
       image: 'assets/img/tariffs/angels-club.jpg',
       imageAlt: 'Автор курса в пудровом спортивном комплекте, визуал тарифа Angels Club',
       imageClass: 'tariffs__media--portrait',
       features: [
-        'тренировки для дома и зала с прогрессией нагрузки',
+        'тренировки для зала с прогрессией нагрузки',
         'видео с техникой выполнения',
         'умная таблица с встроенной периодизацией',
         'общий чат поддержки со мной',
         'проверка техники 1 раз в неделю по лимитам',
-        'питание без ограничений: 125+ рецептов, сборники, калькулятор КБЖУ, гайды',
+        'питание: 125+ рецептов, сборники, калькулятор КБЖУ, гайды',
+        'домашний формат тренировок',
         'комплексы на кор и осанку',
-        'работа над лимфой: дыхательные практики',
+        'дыхательные практики для работы с лимфой',
       ],
       note: '',
       chips: [],
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imageAlt: 'Автор курса выполняет упражнение на коврике, визуал тарифа Private Club',
       imageClass: 'tariffs__media--wide',
       features: [
-        'всё, что входит в Angels Club',
+        'всё, что входит в Angels Club, включая домашний формат, комплексы на кор и осанку и дыхательные практики',
         'личное сопровождение от меня',
         'индивидуальные рекомендации и корректировки',
         'более глубокий разбор техники',
@@ -196,9 +197,49 @@ document.addEventListener('DOMContentLoaded', () => {
       action.textContent = tariff.cta;
       card.append(action);
 
-      tariffsGrid.append(card);
+    tariffsGrid.append(card);
     });
   }
+
+  const faqItems = document.querySelectorAll('[data-faq-item]');
+
+  const setFaqItemState = (item, isOpen) => {
+    const button = item.querySelector('.faq__toggle');
+    const panel = button ? document.getElementById(button.getAttribute('aria-controls')) : null;
+
+    item.classList.toggle('is-open', isOpen);
+    button?.setAttribute('aria-expanded', String(isOpen));
+    if (panel) {
+      panel.hidden = !isOpen;
+    }
+  };
+
+  faqItems.forEach((item) => {
+    const button = item.querySelector('.faq__toggle');
+    if (!button) {
+      return;
+    }
+
+    const toggleItem = () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      faqItems.forEach((faqItem) => {
+        setFaqItemState(faqItem, false);
+      });
+
+      setFaqItemState(item, !isOpen);
+    };
+
+    button.addEventListener('click', toggleItem);
+    button.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') {
+        return;
+      }
+
+      event.preventDefault();
+      toggleItem();
+    });
+  });
 
   const tariffsCarousel = document.querySelector('.tariffs__carousel');
   const tariffsTrack = document.querySelector('[data-tariffs-track]');

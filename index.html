@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Статический лендинг фитнес-курса с будущей оплатой через GetCourse.">
   <title>Фитнес-курс — лендинг</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=tariffs-media-1">
+  <link rel="stylesheet" href="assets/css/style.css?v=results-card-monolith-1">
 </head>
 <body>
   <header>
@@ -38,7 +38,7 @@
 
       <div class="hero__bottom">
         <p class="hero__edition">Angel Edition</p>
-        <a class="hero__button" href="#tariffs">Выбрать тариф</a>
+        <a class="hero__button" href="#tariffs-list">Выбрать тариф</a>
       </div>
     </section>
 
@@ -64,7 +64,7 @@
 
         <div class="audience__note">
           <p class="audience__note-text">Gym Girls Club — это забота о себе через тренировки, питание и систему, которая помогает прийти к результату спокойно и без&nbsp;выгорания</p>
-          <a class="audience__note-link" href="#tariffs" hidden>Посмотреть тарифы</a>
+          <a class="audience__note-link" href="#tariffs-list" hidden>Посмотреть тарифы</a>
         </div>
       </div>
     </section>
@@ -197,7 +197,7 @@
         </div>
 
         <div class="program__cta-wrap reveal-up">
-          <a class="program__cta" href="#tariffs">Перейти к тарифам</a>
+          <a class="program__cta" href="#tariffs-list">Перейти к тарифам</a>
           <p class="program__cta-note">Получи доступ ко всей системе:<br>программе, таблице, материалам и чату</p>
         </div>
       </div>
@@ -459,7 +459,7 @@
         </article>
 
         <div class="program__cta-wrap results__cta-wrap reveal-up">
-          <a class="program__cta results__cta" href="#tariffs">Хочу пройти курс</a>
+          <a class="program__cta results__cta" href="#tariffs-list">Хочу пройти курс</a>
           <p class="program__cta-note">Начнёшь с понятного плана, техники и таблицы прогресса</p>
         </div>
       </div>
@@ -487,7 +487,7 @@
           </div>
         </div>
 
-        <div class="tariffs__carousel reveal-up">
+        <div id="tariffs-list" class="tariffs__carousel reveal-up">
           <div class="tariffs__grid" data-tariffs-grid data-tariffs-track aria-label="Форматы участия в курсе" tabindex="0"></div>
         </div>
 
@@ -497,9 +497,138 @@
       </div>
     </section>
 
-    <section id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Вопросы</h2>
-      <p>Здесь позже будут ответы на частые вопросы</p>
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <div class="faq__inner">
+        <div class="faq__heading reveal-up">
+          <p class="faq__eyebrow">Вопросы</p>
+          <h2 id="faq-title">Ответы на частые вопросы</h2>
+          <p class="faq__lead">Собрала самые частые сомнения перед стартом: про режим, питание, мотивацию, зал, поддержку и технические моменты.</p>
+        </div>
+
+        <div class="faq__accordion reveal-up" data-faq-accordion>
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-1" aria-expanded="false" aria-controls="faq-panel-1">
+                <span>У меня нет режима. Я смогу встроить курс в свой график?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-1" role="region" aria-labelledby="faq-question-1" hidden>
+              <p>Да, курс построен так, чтобы у тебя был понятный план и варианты по нагрузке. Мы не делаем ставку на идеальный график: важно двигаться системно и постепенно встраивать тренировки в реальную жизнь.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-2" aria-expanded="false" aria-controls="faq-panel-2">
+                <span>Я часто срываюсь в питании. Это мне подойдёт?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-2" role="region" aria-labelledby="faq-question-2" hidden>
+              <p>Подойдёт, если тебе нужен спокойный подход без жёстких запретов. Внутри есть рецепты, гайды и калькулятор КБЖУ, чтобы питание стало понятнее, а не превращалось в постоянное “держусь или сорвалась”.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-3" aria-expanded="false" aria-controls="faq-panel-3">
+                <span>У меня не хватает дисциплины и мотивации. Что поможет не бросить?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-3" role="region" aria-labelledby="faq-question-3" hidden>
+              <p>Тебя будет держать не только мотивация, а структура: план тренировок, таблица прогресса, чат поддержки и регулярные точки контроля. Так проще возвращаться в процесс, даже если неделя прошла не идеально.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-4" aria-expanded="false" aria-controls="faq-panel-4">
+                <span>Я уже пробовала заниматься, но не видела результата. Почему тут может быть иначе?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-4" role="region" aria-labelledby="faq-question-4" hidden>
+              <p>Здесь фокус не на случайных тренировках, а на системе: прогрессия нагрузки, техника, питание и отслеживание изменений. Результат зависит от многих факторов, но тебе не придётся собирать всё по кусочкам самой.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-5" aria-expanded="false" aria-controls="faq-panel-5">
+                <span>Я не очень понимаю технику упражнений. Мне будет понятно, что делать?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-5" role="region" aria-labelledby="faq-question-5" hidden>
+              <p>Да, внутри есть видео с техникой выполнения и видеоозвучка на каждом упражнении. Это помогает не просто повторять движения, а лучше понимать, что ты делаешь и где нужно поправить выполнение.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-6" aria-expanded="false" aria-controls="faq-panel-6">
+                <span>Если я не могу ходить в зал регулярно, есть ли смысл идти в поток?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-6" role="region" aria-labelledby="faq-question-6" hidden>
+              <p>Да, в Angels Club дополнительно входит домашний формат тренировок. Если не получается попасть в зал, ты можешь продолжать заниматься дома и не выпадать из процесса полностью.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-7" aria-expanded="false" aria-controls="faq-panel-7">
+                <span>Чем Angels Club отличается от Private Club?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-7" role="region" aria-labelledby="faq-question-7" hidden>
+              <p>Angels Club — это основной поток с программой, материалами, чатом и проверкой техники. Private Club включает всё из Angels Club и добавляет больше личного сопровождения, корректировок и приоритетной поддержки.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-8" aria-expanded="false" aria-controls="faq-panel-8">
+                <span>Когда и куда придёт доступ?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-8" role="region" aria-labelledby="faq-question-8" hidden>
+              <p>После оплаты доступ придёт на контакты, которые ты укажешь при оформлении. Если письмо или ссылка не появились, напиши в Telegram: <a href="https://t.me/qmellz_pr" target="_blank" rel="noopener">@qmellz_pr</a> — поможем проверить оплату и доступ.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-9" aria-expanded="false" aria-controls="faq-panel-9">
+                <span>Как проходит проверка техники?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-9" role="region" aria-labelledby="faq-question-9" hidden>
+              <p>Ты присылаешь видео выполнения упражнений, а я или куратор даём обратную связь по технике. Это нужно, чтобы тренировки были понятнее и осознаннее.</p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <h3 class="faq__question">
+              <button class="faq__toggle" type="button" id="faq-question-10" aria-expanded="false" aria-controls="faq-panel-10">
+                <span>Что делать, если возник технический вопрос?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq__answer" id="faq-panel-10" role="region" aria-labelledby="faq-question-10" hidden>
+              <p>Если что-то не открывается, не пришла ссылка или возник технический вопрос, напиши в Telegram: <a href="https://t.me/qmellz_pr" target="_blank" rel="noopener">@qmellz_pr</a>. Мы разберёмся и подскажем, что сделать дальше.</p>
+            </div>
+          </article>
+        </div>
+
+        <a class="program__cta faq__cta reveal-up" href="#tariffs-list">Выбрать курс</a>
+      </div>
     </section>
   </main>
 
@@ -507,6 +636,6 @@
     <p>Юридическая информация и ссылки на документы будут добавлены позже</p>
   </footer>
 
-  <script src="assets/js/main.js?v=tariffs-media-1"></script>
+  <script src="assets/js/main.js?v=results-card-monolith-1"></script>
 </body>
 </html>
