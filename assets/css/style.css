@@ -2760,7 +2760,7 @@ main > section:not(.hero)::before {
   }
 
   .tariffs__card--alumni .tariffs__text {
-    margin-top: 18px;
+    margin-top: 28px;
   }
 
   .tariffs__price {
