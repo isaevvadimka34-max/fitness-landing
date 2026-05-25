@@ -2748,6 +2748,23 @@ main > section:not(.hero)::before {
     top: calc((1em * 1.32 - 6px) / 2);
   }
 
+  .tariffs__card--premium .tariffs__features {
+    gap: 9px;
+  }
+
+  .tariffs__card--premium .tariffs__features li {
+    font-size: 14px;
+    line-height: 1.36;
+  }
+
+  .tariffs__card--premium .tariffs__features li::before {
+    top: calc((1em * 1.36 - 6px) / 2);
+  }
+
+  .tariffs__card--alumni .tariffs__text {
+    margin-top: 18px;
+  }
+
   .tariffs__price {
     width: 100%;
     justify-items: center;
@@ -2771,6 +2788,12 @@ main > section:not(.hero)::before {
 
   .tariffs__old-price {
     font-size: 13px;
+  }
+
+  .tariffs__card--premium .tariffs__old-price {
+    color: rgba(255, 248, 243, 0.7);
+    text-decoration-color: rgba(255, 248, 243, 0.88);
+    text-decoration-thickness: 2px;
   }
 
   .tariffs__cta {
