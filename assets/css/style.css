@@ -2224,12 +2224,33 @@ body.is-lightbox-open {
   color: rgba(255, 248, 243, 0.58);
 }
 
+.tariffs__feature-groups,
 .tariffs__features {
   display: grid;
   gap: 9px;
   margin: 0;
+}
+
+.tariffs__features {
   padding: 2px 0 0;
   list-style: none;
+}
+
+.tariffs__feature-groups {
+  gap: 18px;
+}
+
+.tariffs__feature-group {
+  display: grid;
+  gap: 5px;
+}
+
+.tariffs__feature-title {
+  margin: 0;
+  color: rgba(62, 39, 35, 0.9);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .tariffs__features li {
@@ -2603,6 +2624,10 @@ main > section:not(.hero)::before {
     order: 6;
   }
 
+  .tariffs__feature-groups {
+    order: 6;
+  }
+
   .tariffs__chips,
   .tariffs__note {
     order: 8;
@@ -2696,6 +2721,18 @@ main > section:not(.hero)::before {
 
   .tariffs__media--materials img {
     object-fit: contain;
+  }
+
+  .tariffs__feature-groups {
+    gap: 18px;
+  }
+
+  .tariffs__feature-group {
+    gap: 4px;
+  }
+
+  .tariffs__feature-title {
+    font-size: 14px;
   }
 
   .tariffs__features {

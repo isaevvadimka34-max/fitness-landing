@@ -18,14 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/img/tariffs/angels-club.jpg',
       imageAlt: 'Автор курса в пудровом спортивном комплекте, визуал тарифа Angels Club',
       imageClass: 'tariffs__media--portrait',
-      features: [
-        'тренировки для дома/зала с прогрессией нагрузки, видео с техникой',
-        'умная таблица с встроенной периодизацией, она автоматически ведёт весь ваш прогресс',
-        'общий чат поддержки со мной',
-        'проверка техники от меня раз в неделю по лимитам',
-        'питание без ограничений: 125+ рецептов, сборники, калькулятор кбжу, гайды',
-        'комплексы на кор и осанку',
-        'работа над лимфой: дыхательные практики',
+      featureGroups: [
+        {
+          title: 'Тренировки',
+          items: [
+            'для зала и дома',
+            'видео с техникой',
+            'умная таблица',
+          ],
+        },
+        {
+          title: 'Питание',
+          items: [
+            '125+ рецептов',
+            'калькулятор КБЖУ и гайды',
+          ],
+        },
+        {
+          title: 'Дополнительно',
+          items: [
+            'осанка и плоский живот',
+            'дыхательные практики',
+            'чат поддержки',
+            'работа с лимфой',
+            'трекеры прогресса',
+          ],
+        },
       ],
       note: '',
       chips: [],
@@ -158,12 +176,31 @@ document.addEventListener('DOMContentLoaded', () => {
         card.append(createTextElement('p', 'tariffs__text', tariff.text));
       }
 
-      const list = document.createElement('ul');
-      list.className = 'tariffs__features';
-      tariff.features.forEach((feature) => {
-        list.append(createTextElement('li', '', feature));
-      });
-      card.append(list);
+      if (tariff.featureGroups?.length) {
+        const groups = document.createElement('div');
+        groups.className = 'tariffs__feature-groups';
+        tariff.featureGroups.forEach((group) => {
+          const groupElement = document.createElement('div');
+          groupElement.className = 'tariffs__feature-group';
+          groupElement.append(createTextElement('p', 'tariffs__feature-title', group.title));
+
+          const list = document.createElement('ul');
+          list.className = 'tariffs__features';
+          group.items.forEach((feature) => {
+            list.append(createTextElement('li', '', feature));
+          });
+          groupElement.append(list);
+          groups.append(groupElement);
+        });
+        card.append(groups);
+      } else {
+        const list = document.createElement('ul');
+        list.className = 'tariffs__features';
+        tariff.features.forEach((feature) => {
+          list.append(createTextElement('li', '', feature));
+        });
+        card.append(list);
+      }
 
       if (tariff.chips.length) {
         const chips = document.createElement('div');
