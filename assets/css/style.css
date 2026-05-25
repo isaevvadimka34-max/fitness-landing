@@ -566,7 +566,7 @@ main > section:not(.hero) h2.results__eyebrow {
   width: clamp(24px, 6vw, 58px);
   height: 1px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(201, 123, 148, 0), rgba(62, 39, 35, 0.38), rgba(201, 123, 148, 0));
+  background: linear-gradient(90deg, rgba(201, 123, 148, 0), rgba(201, 123, 148, 0.56), rgba(201, 123, 148, 0));
   flex: 0 0 auto;
 }
 
@@ -2123,6 +2123,7 @@ body.is-lightbox-open {
 }
 
 .tariffs__media--portrait img {
+  object-fit: contain;
   object-position: center 44%;
 }
 
@@ -2133,6 +2134,10 @@ body.is-lightbox-open {
 .tariffs__media--graphic img,
 .tariffs__media--materials img {
   object-position: center center;
+}
+
+.tariffs__media--materials img {
+  object-fit: contain;
 }
 
 .tariffs__card--premium .tariffs__media {
