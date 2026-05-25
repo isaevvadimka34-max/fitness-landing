@@ -2765,6 +2765,10 @@ main > section:not(.hero)::before {
     border-top-color: rgba(255, 248, 243, 0.16);
   }
 
+  .tariffs__card--alumni .tariffs__price {
+    margin-top: 12px;
+  }
+
   .tariffs__price strong {
     font-size: clamp(35px, 10vw, 44px);
   }
