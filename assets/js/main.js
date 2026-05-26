@@ -6,6 +6,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const audienceNoteText = document.querySelector('.audience__note-text');
   const audienceNoteLink = document.querySelector('.audience__note-link');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sectionNavLinks = Array.from(document.querySelectorAll('header nav a[href^="#"]'));
+  const sectionNavItems = sectionNavLinks
+    .map((link) => ({
+      link,
+      section: document.getElementById(link.hash.slice(1)),
+    }))
+    .filter((item) => item.section);
+
+  const setActiveNavLink = (activeLink) => {
+    sectionNavLinks.forEach((link) => link.removeAttribute('aria-current'));
+    activeLink?.setAttribute('aria-current', 'page');
+  };
+
+  if (sectionNavItems.length) {
+    setActiveNavLink(sectionNavItems[0].link);
+
+    sectionNavLinks.forEach((link) => {
+      link.addEventListener('click', () => setActiveNavLink(link));
+    });
+
+    if ('IntersectionObserver' in window) {
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const item = sectionNavItems.find((navItem) => navItem.section === entry.target);
+          setActiveNavLink(item?.link);
+        });
+      }, {
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: 0,
+      });
+
+      sectionNavItems.forEach((item) => navObserver.observe(item.section));
+    }
+  }
+
   const tariffPlans = [
     {
       id: 'angels',
