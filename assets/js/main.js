@@ -187,6 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 'materials',
+      isPublished: false,
+      launchNote: 'Можно будет приобрести с 1 июня',
       title: 'Центр материалов',
       badge: 'САМОСТОЯТЕЛЬНЫЙ ДОСТУП',
       highlight: '',
@@ -221,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (tariffsGrid) {
-    tariffPlans.forEach((tariff) => {
+    tariffPlans.filter((tariff) => tariff.isPublished !== false).forEach((tariff) => {
       const card = document.createElement('article');
       card.className = `tariffs__card tariffs__card--${tariff.variant} reveal-up`;
       card.dataset.tariffId = tariff.id;

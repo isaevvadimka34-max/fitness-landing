@@ -152,7 +152,7 @@
               </div>
             </article>
 
-            <article class="program__panel program__panel--materials reveal-up">
+            <article class="program__panel program__panel--materials reveal-up" data-deferred-feature="materials-center" hidden>
               <div class="program__panel-copy">
                 <span class="program__label">Личный доступ</span>
                 <h3 class="program__accent-title">Центр материалов<br>с личным доступом</h3>
@@ -475,12 +475,12 @@
         <div class="tariffs__heading reveal-up">
           <p class="tariffs__eyebrow">ТАРИФЫ</p>
           <h2 id="tariffs-title">Выбери формат участия</h2>
-          <p class="tariffs__lead">Можно пройти курс в общем потоке, взять личное сопровождение или забрать материалы для самостоятельной работы</p>
+          <p class="tariffs__lead">Можно пройти курс в общем потоке или взять личное сопровождение с более глубоким разбором</p>
         </div>
 
         <div class="tariffs__meta reveal-up">
           <span class="tariffs__scroll-hint">Листай форматы →</span>
-          <span class="tariffs__desktop-count">Рассрочка доступна для всех тарифов, кроме Back to GGC</span>
+          <span class="tariffs__desktop-count">Рассрочка доступна для Angels Club и Private Club</span>
           <div class="tariffs__carousel-controls" aria-label="Управление лентой тарифов">
             <button class="tariffs__carousel-arrow" type="button" data-tariffs-scroll="prev" aria-label="Показать предыдущий тариф">‹</button>
             <button class="tariffs__carousel-arrow" type="button" data-tariffs-scroll="next" aria-label="Показать следующий тариф">›</button>
@@ -631,8 +631,27 @@
     </section>
   </main>
 
-  <footer>
-    <p>Юридическая информация и ссылки на документы будут добавлены позже</p>
+  <footer class="site-footer" id="legal">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <p class="site-footer__name">Gym Girls Club</p>
+        <p>ИП Исаева Анастасия Станиславовна</p>
+        <p>ИНН 344811605544 · ОГРНИП 325344300015357</p>
+      </div>
+
+      <nav class="site-footer__links" aria-label="Юридические документы">
+        <a href="assets/docs/offer.html">Оферта</a>
+        <a href="assets/docs/privacy.html">Политика ПДн</a>
+        <a href="assets/docs/personal-data-consent.html">Согласие на ПДн</a>
+        <a href="assets/docs/marketing-consent.html">Согласие на рассылку</a>
+        <a href="assets/docs/photo-consent.html">Фото и отзывы</a>
+      </nav>
+
+      <div class="site-footer__contacts">
+        <a href="mailto:space_body@inbox.ru">space_body@inbox.ru</a>
+        <a href="https://t.me/qmellz_pr" target="_blank" rel="noopener">@qmellz_pr</a>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/js/main.js?v=final-tariffs-1"></script>
