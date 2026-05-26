@@ -2763,7 +2763,7 @@ main > section:not(.hero)::before {
   }
 
   .tariffs__card--materials .tariffs__note {
-    margin-top: 28px;
+    margin-top: 9px;
   }
 
   .tariffs__price {
