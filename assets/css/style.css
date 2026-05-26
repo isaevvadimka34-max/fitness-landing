@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 86px;
 }
 
 body {
@@ -43,7 +44,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  padding: 14px clamp(16px, 4vw, 48px);
+  padding: 18px clamp(16px, 4vw, 48px) 0;
   pointer-events: none;
 }
 
@@ -57,12 +58,12 @@ nav {
   margin: 0 auto;
   padding: 6px;
   overflow-x: auto;
-  border: 1px solid rgba(255, 248, 243, 0.18);
+  border: 1px solid rgba(255, 248, 243, 0.24);
   border-radius: 999px;
-  background: rgba(62, 39, 35, 0.54);
-  box-shadow: 0 12px 34px rgba(36, 23, 22, 0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(83, 56, 53, 0.42);
+  box-shadow: 0 14px 36px rgba(36, 23, 22, 0.14);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
   pointer-events: auto;
   scrollbar-width: none;
 }
@@ -79,7 +80,7 @@ nav a {
   min-height: 34px;
   padding: 0 12px;
   border-radius: 999px;
-  color: rgba(255, 248, 243, 0.8);
+  color: rgba(255, 248, 243, 0.82);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-decoration: none;
@@ -91,7 +92,7 @@ nav a {
 nav a:hover,
 nav a:focus-visible,
 nav a[aria-current="page"] {
-  background: rgba(255, 248, 243, 0.16);
+  background: rgba(244, 201, 214, 0.18);
   color: var(--cream);
 }
 
@@ -241,6 +242,11 @@ nav a:focus-visible {
 main > section:not(.hero),
 footer {
   padding: clamp(56px, 8vw, 96px) clamp(18px, 5vw, 72px);
+}
+
+main > section,
+#tariffs-list {
+  scroll-margin-top: 86px;
 }
 
 main > section:not(.hero) {
@@ -2884,15 +2890,19 @@ footer {
 }
 
 @media (max-width: 760px) {
+  html {
+    scroll-padding-top: 68px;
+  }
+
   header {
-    padding: max(10px, env(safe-area-inset-top)) 0 0;
+    padding: max(14px, env(safe-area-inset-top)) 0 0;
   }
 
   nav {
     justify-content: flex-start;
     max-width: calc(100vw - 20px);
     padding: 5px;
-    background: rgba(62, 39, 35, 0.66);
+    background: rgba(83, 56, 53, 0.46);
     scroll-padding-inline: 10px;
   }
 
@@ -2901,6 +2911,11 @@ footer {
     padding: 0 10px;
     font-size: 10px;
     letter-spacing: 0.06em;
+  }
+
+  main > section,
+  #tariffs-list {
+    scroll-margin-top: 68px;
   }
 
   .hero__photo {
