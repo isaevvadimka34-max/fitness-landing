@@ -2247,6 +2247,32 @@ body.is-lightbox-open {
   text-decoration-thickness: 1px;
 }
 
+.tariffs__installment {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid rgba(116, 49, 59, 0.16);
+  border-radius: 17px;
+  background: rgba(244, 201, 214, 0.24);
+  text-align: center;
+}
+
+.tariffs__installment strong {
+  color: #74313b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(21px, 2.3vw, 26px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.tariffs__installment span {
+  color: rgba(36, 23, 22, 0.62);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
 .tariffs__card--alumni .tariffs__price {
   justify-items: center;
   text-align: center;
@@ -2262,6 +2288,19 @@ body.is-lightbox-open {
 
 .tariffs__card--premium .tariffs__old-price {
   color: rgba(255, 248, 243, 0.58);
+}
+
+.tariffs__card--premium .tariffs__installment {
+  border-color: rgba(255, 248, 243, 0.18);
+  background: rgba(255, 248, 243, 0.1);
+}
+
+.tariffs__card--premium .tariffs__installment strong {
+  color: var(--cream);
+}
+
+.tariffs__card--premium .tariffs__installment span {
+  color: rgba(255, 248, 243, 0.68);
 }
 
 .tariffs__feature-groups,
@@ -2346,6 +2385,10 @@ body.is-lightbox-open {
 }
 
 .tariffs__price + .tariffs__cta {
+  margin-top: 0;
+}
+
+.tariffs__installment + .tariffs__cta {
   margin-top: 0;
 }
 
@@ -2685,8 +2728,12 @@ main > section:not(.hero)::before {
     order: 9;
   }
 
-  .tariffs__cta {
+  .tariffs__installment {
     order: 10;
+  }
+
+  .tariffs__cta {
+    order: 11;
   }
 
   .tariffs__badge {
@@ -2859,6 +2906,10 @@ main > section:not(.hero)::before {
   }
 
   .tariffs__price + .tariffs__cta {
+    margin-top: 9px;
+  }
+
+  .tariffs__installment + .tariffs__cta {
     margin-top: 9px;
   }
 

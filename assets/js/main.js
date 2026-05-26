@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Весь путь проходим вместе в течение 1,5 месяцев',
       price: '7 490 ₽',
       oldPrice: '8 490 ₽',
+      installment: 'от 1 249 ₽/мес',
       image: 'assets/img/tariffs/angels-club.jpg',
       imageAlt: 'Автор курса в пудровом спортивном комплекте, визуал тарифа Angels Club',
       imageClass: 'tariffs__media--portrait',
@@ -141,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Более глубокое сопровождение и личная работа на протяжении потока',
       price: '19 900 ₽',
       oldPrice: '25 490 ₽',
+      installment: 'от 3 317 ₽/мес',
       image: 'assets/img/tariffs/private-club.jpg',
       imageAlt: 'Автор курса выполняет упражнение на коврике, визуал тарифа Private Club',
       imageClass: 'tariffs__media--wide',
@@ -178,9 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'возвращение в систему тренировок',
         'специальная скидка 50% для участниц прошлых\u00a0потоков',
       ],
-      note: '',
+      note: 'Напиши в Telegram: проверим прошлую покупку и отправим индивидуальную ссылку на Angels Club со скидкой 50%',
       chips: [],
       cta: 'Хочу продлить доступ',
+      paymentUrl: 'https://t.me/qmellz_pr',
       variant: 'alumni',
     },
     {
@@ -191,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Материалы курса без участия в потоке и без сопровождения',
       price: '1 990 ₽',
       oldPrice: '2 390 ₽',
+      installment: 'от 332 ₽/мес',
       image: 'assets/img/tariffs/materials-center-premium.png',
       imageAlt: 'Минималистичный premium-визуал центра материалов с телефоном, папкой и карандашом',
       imageClass: 'tariffs__media--materials',
@@ -305,6 +309,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         price.append(createTextElement('strong', '', tariff.price));
         card.append(price);
+      }
+
+      if (tariff.installment) {
+        const installment = document.createElement('div');
+        installment.className = 'tariffs__installment';
+        installment.append(createTextElement('strong', '', tariff.installment));
+        installment.append(createTextElement('span', '', 'в рассрочку до 6 месяцев'));
+        card.append(installment);
       }
 
       const action = document.createElement('a');
