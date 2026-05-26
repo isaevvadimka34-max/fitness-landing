@@ -2762,6 +2762,10 @@ main > section:not(.hero)::before {
     margin-top: 28px;
   }
 
+  .tariffs__card--materials .tariffs__note {
+    margin-top: 28px;
+  }
+
   .tariffs__price {
     width: 100%;
     justify-items: center;
