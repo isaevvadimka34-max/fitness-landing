@@ -2758,6 +2758,11 @@ main > section:not(.hero)::before {
     top: calc((1em * 1.36 - 6px) / 2);
   }
 
+  .tariffs__card--alumni .tariffs__features {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
   .tariffs__card--alumni .tariffs__text {
     margin-top: 28px;
   }
