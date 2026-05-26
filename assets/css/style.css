@@ -2593,10 +2593,18 @@ main > section:not(.hero)::before {
   .tariffs__title,
   .tariffs__card--main .tariffs__title {
     font-size: clamp(32px, 2.8vw, 42px);
+    text-align: center;
   }
 
   .tariffs__description {
     font-size: 15px;
+    text-align: center;
+  }
+
+  .tariffs__price {
+    width: 100%;
+    justify-items: center;
+    text-align: center;
   }
 
   .tariffs__features {

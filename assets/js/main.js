@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       note: '',
       chips: [],
       cta: 'Выбрать Angels Club',
+      paymentUrl: 'https://qmellz.pro/pay-angels',
       variant: 'main',
     },
     {
@@ -156,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       note: '',
       chips: [],
       cta: 'Хочу личное ведение',
+      paymentUrl: 'https://qmellz.pro/pay-private',
       variant: 'premium',
     },
     {
@@ -307,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const action = document.createElement('a');
       action.className = 'program__cta tariffs__cta';
-      action.href = '#';
+      action.href = tariff.paymentUrl || '#';
       action.dataset.tariffCta = tariff.id;
       action.textContent = tariff.cta;
       card.append(action);
