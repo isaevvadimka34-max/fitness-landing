@@ -2576,6 +2576,11 @@ main > section:not(.hero)::before {
   .tariffs__grid {
     grid-auto-columns: 58vw;
   }
+
+  .tariffs__card--materials .tariffs__title {
+    font-size: clamp(30px, 4vw, 38px);
+    white-space: nowrap;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2637,6 +2642,17 @@ main > section:not(.hero)::before {
   .tariffs__card--main .tariffs__title {
     font-size: clamp(32px, 2.8vw, 42px);
     text-align: center;
+  }
+
+  .tariffs__card--alumni .tariffs__title,
+  .tariffs__card--materials .tariffs__title {
+    display: grid;
+    place-items: center;
+    min-height: 42px;
+  }
+
+  .tariffs__card--materials .tariffs__title {
+    font-size: clamp(30px, 1.8vw, 32px);
   }
 
   .tariffs__description {
@@ -2756,6 +2772,13 @@ main > section:not(.hero)::before {
     text-align: center;
   }
 
+  .tariffs__card--alumni .tariffs__title,
+  .tariffs__card--materials .tariffs__title {
+    display: grid;
+    place-items: center;
+    min-height: 80px;
+  }
+
   .tariffs__description {
     padding: 0;
     border: 0;
@@ -2764,6 +2787,13 @@ main > section:not(.hero)::before {
     color: rgba(36, 23, 22, 0.62);
     font-size: 12.5px;
     line-height: 1.28;
+  }
+
+  .tariffs__card--alumni .tariffs__description,
+  .tariffs__card--materials .tariffs__description {
+    display: grid;
+    place-items: start center;
+    min-height: 32px;
   }
 
   .tariffs__card--premium .tariffs__description {
